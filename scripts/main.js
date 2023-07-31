@@ -1,8 +1,8 @@
-import { Employees } from "./Employees.js"
-import { Orders } from "./Order.js"
-import { Products } from "./Products.js"
+import { Employees } from "./Employees.js";
+import { Orders } from "./Orders.js";
+import { Products } from "./Products.js";
 
-const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container");
 
 const applicationHTML = `
 <h1>Brewed Awakenings</h1>
@@ -17,11 +17,10 @@ const applicationHTML = `
     </section>
 </article>
 
-<article class="orders">
+<article class="orders list">
     <h2>Orders</h2>
     ${Orders()}
 </article>
-`
+`;
 
-mainContainer.innerHTML = applicationHTML
-
+mainContainer.innerHTML = applicationHTML;
