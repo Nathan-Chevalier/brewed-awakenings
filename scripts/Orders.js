@@ -22,7 +22,7 @@ const findProduct = (order, allProducts) => {
 const findEmployee = (order, allEmployees) => {
   let orderEmployee = null;
 
-  for (const employee in allEmployees) {
+  for (const employee of allEmployees) {
     if (employee.id === order.employeeId) {
       orderEmployee = employee;
     }
@@ -37,11 +37,16 @@ export const Orders = () => {
 
   for (const order of orders) {
     const employee = findEmployee(order, employees);
-    const product = findProduct(order);
-
-    html += `<li>${product.name} was sold by ${employee.name} on ${new Date(
-      order.timestamp
-    ).toLocaleDateString()}</li>`;
+    const product = findProduct(order, products);
+    if (employee === null) {
+      html += `<li>${product.name} was sold on ${new Date(
+        order.timestamp
+      ).toLocaleDateString()}</li>`;
+    } else {
+      html += `<li>${product.name} was sold by ${employee.name} on ${new Date(
+        order.timestamp
+      ).toLocaleDateString()}</li>`;
+    }
   }
 
   html += "</ul>";

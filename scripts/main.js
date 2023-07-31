@@ -17,7 +17,7 @@ const applicationHTML = `
     </section>
 </article>
 
-<article class="orders">
+<article class="orders list">
     <h2>Orders</h2>
     ${Orders()}
 </article>
